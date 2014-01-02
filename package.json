@@ -1,6 +1,6 @@
 {
   "name": "generator-riotjs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A generator for Yeoman that creates a simple Riot.js project",
   "keywords": [
     "yeoman-generator",
