@@ -19,20 +19,22 @@ util.inherits(RiotjsGenerator, yeoman.generators.Base);
 RiotjsGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
-  console.log('Riot.js');
+  console.log('\n\n***********************')
+  console.log('** Riot.js Generator **');
+  console.log('***********************\n\n')
 
   var prompts = [
-    // {
-    //   type: 'confirm',
-    //   name: 'someOption',
-    //   message: 'Would you like to enable this option?',
-    //   default: true
-    // }
+    {
+      type: 'list',
+      name: 'buildFile',
+      message: 'Which build file should I generate?',
+      choices: ['Gruntfile.js', 'Gulpfile.js', 'None'],
+      default: 2
+    }
   ];
 
   this.prompt(prompts, function (props) {
-    this.someOption = props.someOption;
-
+    this.buildFile = props.buildFile === 'None' ? false : props.buildFile;
     cb();
   }.bind(this));
 };
@@ -50,6 +52,10 @@ RiotjsGenerator.prototype.app = function app() {
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
   this.copy('_bowerrc', '.bowerrc')
+
+  if (this.buildFile) {
+    this.copy('_' + this.buildFile, this.buildFile);
+  }
 };
 
 RiotjsGenerator.prototype.projectfiles = function projectfiles() {
