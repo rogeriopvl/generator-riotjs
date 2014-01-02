@@ -1,0 +1,9 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+    "riotjs": "~0.9.7",
+    "todomvc-common": "~0.1.9"
+  }
+}
+
