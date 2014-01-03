@@ -1,5 +1,17 @@
 {
   "name": "package",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    <% if (buildFile === 'Gulpfile.js') { %>
+    "gulp": "~3.2.2",
+    "gulp-livereload": "~0.1.1",
+    "tiny-lr": "0.0.5",
+    "connect": "~2.12.0",
+    "connect-livereload": "~0.3.1"
+    <% } %>
+    <% if (buildFile === 'Gruntfile.js') { %>
+    "grunt": "~0.4.2"
+    <% } %>
+  }
 }
