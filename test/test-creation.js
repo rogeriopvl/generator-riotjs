@@ -36,7 +36,33 @@ describe('riotjs generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'buildFile': 'None'
+    });
+    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFiles(expected);
+      done();
+    });
+  });
+
+  it('creates a Gulpfile when Gulp is chosen as a build tool', function(done) {
+    var expected = ['Gulpfile.js']
+
+    helpers.mockPrompt(this.app, {
+      'buildFile': 'Gulpfile.js'
+    });
+    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFiles(expected);
+      done();
+    });
+  });
+
+  it('creates a Gruntfile when Grunt is chosen as a build tool', function(done) {
+    var expected = ['Gruntfile.js']
+
+    helpers.mockPrompt(this.app, {
+      'buildFile': 'Gruntfile.js'
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
