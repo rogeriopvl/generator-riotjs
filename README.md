@@ -1,5 +1,7 @@
 # generator-riotjs [![Build Status](https://secure.travis-ci.org/rogeriopvl/generator-riotjs.png?branch=master)](https://travis-ci.org/rogeriopvl/generator-riotjs)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rogeriopvl/generator-riotjs.svg)](https://greenkeeper.io/)
+
 A generator for [Yeoman](http://yeoman.io).
 
 ## About
